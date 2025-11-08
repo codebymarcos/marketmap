@@ -1,23 +1,29 @@
 """Pacote `core` — atalhos de importação para funções e utilitários principais.
 
-Importação sugerida:
-  from core import extrair_html, extrair_link_invite
-
-Também é possível acessar o subpacote `core.utils` para funções mais específicas:
-  from core.utils import extractor, http, io
+Imports são feitos de forma tolerante para evitar falhas de import em ambientes
+onde algum módulo ainda não está disponível (útil durante desenvolvimento).
 """
 
-from .group import extrair_html
-from .linkwpp import extrair_link_invite
-from .url import gerar_urls, verificar_urls
+__all__ = []
 
-# expor o subpacote utils
-from . import utils
+try:
+    from .group import extrair_html
+except Exception:
+    extrair_html = None
+else:
+    __all__.append("extrair_html")
 
-__all__ = [
-    "extrair_html",
-    "extrair_link_invite",
-    "gerar_urls",
-    "verificar_urls",
-    "utils",
-]
+try:
+    from .linkwpp import extrair_link_invite
+except Exception:
+    extrair_link_invite = None
+else:
+    __all__.append("extrair_link_invite")
+
+try:
+    from . import utils
+except Exception:
+    utils = None
+else:
+    __all__.append("utils")
+
