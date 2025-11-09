@@ -9,8 +9,8 @@ import json
 from pathlib import Path
 from typing import List
 
-from utils.http import fetch_text
-from utils.io import save_json
+from core.utils.http import fetch_text
+from core.utils.io import save_json
 
 
 def extrair_link_invite(url, output, namedb):

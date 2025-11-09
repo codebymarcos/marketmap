@@ -2,3 +2,5 @@ requests
 pyfiglet
 InquirerPy
 colorama
+fastapi
+uvicorn[standard]

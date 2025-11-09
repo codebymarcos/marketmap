@@ -8,9 +8,9 @@ import re
 import json
 from pathlib import Path
 from urllib.parse import urlparse
-from utils.http import fetch_text
-from utils.extractor import extract_links
-from utils.io import save_json, save_html
+from core.utils.http import fetch_text
+from core.utils.extractor import extract_links
+from core.utils.io import save_json, save_html
 
 
 def extrair_html(url, namedb: str = "gruposdewhats_extracao.json", out_path: str | Path = "data"):
