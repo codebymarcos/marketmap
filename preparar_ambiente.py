@@ -19,3 +19,8 @@ def preparar_ambiente():
 
 if __name__ == "__main__":
     preparar_ambiente()
+    print("!"*12)
+    print(" ativa o ambiente .venv\\Scripts\\activate" )
+    print(" testa a API mano --> python api\\app.py")
+    print("le o arquivo api\\api.md pra tu ver as rotas")
+    print("!"*12)
